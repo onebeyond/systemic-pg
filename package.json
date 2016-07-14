@@ -1,6 +1,6 @@
 {
   "name": "systemic-pg",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A systemic postgres component",
   "main": "index.js",
   "scripts": {
