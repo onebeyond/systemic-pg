@@ -19,3 +19,6 @@ new System()
         // Do stuff with components.pg
     })
 ```
+
+### <= 0.12
+systemic-pg relies on the underlying [pg](https://github.com/brianc/node-postgres) library, which uses native promises and is therefore incompatible with node 0.12 and below. You can monkey patch Promise or use an alternative promise implementation by following [these](https://github.com/brianc/node-pg-pool#bring-your-own-promise) instructions.

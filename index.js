@@ -22,7 +22,6 @@ module.exports = function(options) {
 
     function start(cb) {
         logger.info(format('Connecting to %s', getConnectionUrl()))
-        config.log = logger
         pool = new pg.Pool(config)
         pool.query('select 1').then(function() {
             return cb(null, pool)
