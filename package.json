@@ -1,0 +1,29 @@
+{
+  "name": "systemic-pg",
+  "version": "1.0.3",
+  "description": "A systemic postgres component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "systemic",
+    "postgres"
+  ],
+  "author": "GuideSmiths Ltd",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.0",
+    "lodash.get": "^4.3.0",
+    "pg": "^6.0.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guidesmiths/systemic-pg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/guidesmiths/systemic-pg/issues"
+  },
+  "homepage": "https://github.com/guidesmiths/systemic-pg#readme"
+}
