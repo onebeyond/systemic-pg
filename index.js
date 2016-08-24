@@ -23,10 +23,8 @@ module.exports = function(options) {
     function start(cb) {
         logger.info(format('Connecting to %s', getConnectionUrl()))
         pool = new pg.Pool(config)
-        pool.query('select 1').then(function() {
-            return cb(null, pool)
-        }).catch(function(err) {
-            return cb(err)
+        pool.query('select 1', function(err) {
+            cb(err, pool)
         })
     }
 
