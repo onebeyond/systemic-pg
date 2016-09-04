@@ -23,7 +23,7 @@ module.exports = function(options) {
     function start(cb) {
         logger.info(format('Connecting to %s', getConnectionUrl()))
         pool = new pg.Pool(config)
-        pool.query('select 1', function(err) {
+        pool.query("SET client_min_messages = 'WARNING'", function(err) {
             cb(err, pool)
         })
     }
