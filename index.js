@@ -23,9 +23,54 @@ module.exports = function(options) {
     function start(cb) {
         logger.info(format('Connecting to %s', getConnectionUrl()))
         pool = new pg.Pool(config)
-        pool.query("SET client_min_messages = 'WARNING'", function(err) {
-            cb(err, pool)
+        pool.on('connect', client => {
+            /*
+                pg maintains the order of queued requests. Since the connect event is synchronous
+                we can be sure the following statements will be executed before any other queries
+            */
+            client.on('notice', function(notice) {
+                switch (notice.severity) {
+                    case 'DEBUG': {
+                        logger.debug(notice.message)
+                        break;
+                    }
+                    case 'LOG': {
+                        logger.info(notice.message)
+                        break;
+                    }
+                    case 'INFO': {
+                        logger.info(notice.message)
+                        break;
+                    }
+                    case 'NOTICE': {
+                        logger.info(notice.message)
+                        break;
+                    }
+                    case 'WARNING': {
+                        logger.warn(notice.message)
+                        break;
+                    }
+                    case 'EXCEPTION': {
+                        logger.error(notice.message)
+                        break;
+                    }
+                    default: {
+                        logger.error(notice.message)
+                        break;
+                    }
+                }
+            })
+            async.eachSeries(config.onConnect || [], function(query, cb) {
+                client.query(query, function(err) {
+                    if (err) logger.error(format('Error running query: %s', query), err)
+                    cb()
+                })
+            })
         })
+        pool.on('error', function(err) {
+            logger.warn(format('An idle client has experienced an error'), err)
+        })
+        cb(null, pool);
     }
 
     function stop(cb) {
