@@ -4,7 +4,9 @@
   "description": "A systemic postgres component",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [
     "systemic",
@@ -15,7 +17,8 @@
   "dependencies": {
     "async": "^2.6.0",
     "lodash.get": "^4.4.2",
-    "pg": "^7.4.3"
+    "pg": "^7.4.3",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {},
   "repository": {
@@ -25,5 +28,6 @@
   "bugs": {
     "url": "https://github.com/guidesmiths/systemic-pg/issues"
   },
-  "homepage": "https://github.com/guidesmiths/systemic-pg#readme"
+  "homepage": "https://github.com/guidesmiths/systemic-pg#readme",
+  "snyk": true
 }
