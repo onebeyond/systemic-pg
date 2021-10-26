@@ -4,6 +4,7 @@
   "description": "A systemic postgres component",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "eslint": "eslint . --ext .js --config .eslintrc.json --ignore-path .eslintignore --cache",
     "eslint:fix": "eslint . --ext .js --fix",
     "lint": "npm run eslint"
@@ -20,6 +21,7 @@
     "pg": "^8.4.1"
   },
   "devDependencies": {
+    "husky": "^7.0.0",
     "eslint": "^8.1.0"
   },
   "repository": {
