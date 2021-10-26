@@ -4,7 +4,9 @@
   "description": "A systemic postgres component",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "eslint": "eslint . --ext .js --config .eslintrc.json --ignore-path .eslintignore --cache",
+    "eslint:fix": "eslint . --ext .js --fix",
+    "lint": "npm run eslint"
   },
   "keywords": [
     "systemic",
@@ -17,7 +19,9 @@
     "lodash.get": "^4.4.2",
     "pg": "^8.4.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^8.1.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/guidesmiths/systemic-pg.git"
