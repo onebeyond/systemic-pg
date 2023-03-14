@@ -14,7 +14,7 @@
     "postgres"
   ],
   "author": "GuideSmiths Ltd",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "async": "^2.6.0",
     "lodash.get": "^4.4.2",
