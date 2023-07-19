@@ -1,3 +1,6 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/8fd0f7468cac4f37fd50/maintainability)](https://codeclimate.com/github/onebeyond/systemic-pg/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/8fd0f7468cac4f37fd50/test_coverage)](https://codeclimate.com/github/onebeyond/systemic-pg/test_coverage)
+
 # systemic-pg
 A [systemic](https://github.com/guidesmiths/systemic) pg component
 
