@@ -16,7 +16,7 @@
   "author": "GuideSmiths Ltd",
   "license": "MIT",
   "dependencies": {
-    "async": "^2.6.0",
+    "async": "^3.2.2",
     "lodash.get": "^4.4.2",
     "pg": "^8.4.1"
   },
